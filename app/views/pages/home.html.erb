@@ -8,9 +8,9 @@
 <br>
 <div class="container">
   <div class="row">
-      <%= render 'shared/cards' %>
-      <%= render 'shared/cards' %>
-      <%= render 'shared/cards' %>
+    <% Laundry.first(3).each do |laundry| %>
+      <%= render partial: 'shared/cards', locals: { laundry: laundry } %>
+    <% end %>
   </div>
 </div>
 

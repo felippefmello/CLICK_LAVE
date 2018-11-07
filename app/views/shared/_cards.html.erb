@@ -1,11 +1,11 @@
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2> Nome da laundry</h2>
-          <p>Preço do Kg:</p>
-        </div>
-        <%= link_to "Saiba mais", '#' %>
+<%= link_to '#' do %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% laundry.cnpj %>);">
+      <div class="card-category"></div>
+      <div class="card-description">
+        <h2> <%= laundry.name  %></h2>
+        <p> Preço do kg R$: <%= laundry.price_kg %></p>
       </div>
     </div>
-
+  </div>
+<% end %>
