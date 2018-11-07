@@ -15,7 +15,7 @@ class LaundriesController < ApplicationController
   def create
     @laundry = Laundry.new(laundry_params)
     if @laundry.save
-      redirect_to laundries_show_path(@laundry)
+      redirect_to laundries_index_path
     else
       render :new
     end
