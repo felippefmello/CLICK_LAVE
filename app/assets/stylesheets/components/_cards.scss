@@ -89,4 +89,28 @@
 
 .main-container {
   display: flex;
+  justify-content: space-around;
+}
+
+.laundry-card-list {
+  display: flex;
+  justify-content: space-around;
+  width: 360px;
+  height: 220px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.card-list {
+  height: 125px;
+  width: 150px;
+  background-size: cover;
+}
+
+.laundry-rating {
+  font-size: 0.7 em;
+}
+
+.laundry-img {
+  margin: 10px;
 }
