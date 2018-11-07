@@ -13,9 +13,13 @@ class LaundriesController < ApplicationController
   end
 
   def create
-    laundry = Laundry.new(laundry_params)
-    laundry.save
-    # redirect_to laundry_path(laundry)
+    @laundry = Laundry.new(laundry_params)
+    @laundry.user = current_user
+    if @laundry.save
+      redirect_to laundry_path(@laundry)
+    else
+      render :new
+    end
   end
 
   def edit
