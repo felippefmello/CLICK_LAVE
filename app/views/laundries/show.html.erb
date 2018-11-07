@@ -1,17 +1,15 @@
 <div class="container-laundry">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-       <div class="card-laundry">
-        <img src="app/images/logo.png" class="card-user-avatar">
-          <div class="card-laundry-infos">
-           <h1>Laundry Name</h1>
-           <p>Address</p>
-          </div>
-          <div class = card-laundry-prices>
-            <p> Preco per kg</p>
-            <p> Capacidade </p>
-          </div>
-       </div>
+       <img src="/<%= @laundry.cnpj  %>" alt="" class="main_laundry_picture">
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h1><%= @laundry.name %></h1>
+      <h2><%= @laundry.address %></h2>
+      <p> Preco per kg: <%= @laundry.price_kg%></p>
+      <p> Capacity: <%= @laundry.capacity%></p>
+
+      <%=link_to "Lavar", "#", class: "btn btn-success" %>
     </div>
   </div>
 </div>
