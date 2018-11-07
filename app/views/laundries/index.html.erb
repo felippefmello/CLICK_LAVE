@@ -4,25 +4,18 @@
 
 
   <div class="main-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
 
-        <div class="card" style="background-image: url(images/5asec.jpg)">Lavanderia 5asec - Vila Madalena
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <% @laundries.each do |laundry| %>
+        <div class="card" style="background-image: url(images/5asec.jpg)">
+        <h2><%= laundry.name %></h2>
+        <h3><%= laundry.price_kg %></h3>
         </div>
-        <div class="card" style="background-image: url(images/bonasecco.jpg)">
-            BonaSecco - Brooklin
-        </div>
-        <div class="card" style="background-image: url(images/laundromat.jpg)">
-            Laudromat - Itaim
-        </div>
-        <div class="card" style="background-image: url(images/lavaeleva.jpg)">
-            Lava&Leva - Vila Mariana
-        </div>
+      <% end %>
     </div>
 
-      <div id="map"></div>
+    <div id="map"></div>
         <!-- Gmaps js: building the map -->
-    </div>
   </div>
 </div>
 
