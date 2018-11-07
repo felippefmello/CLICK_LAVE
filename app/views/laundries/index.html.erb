@@ -24,10 +24,16 @@
   <div class="main-container">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <% @laundries.each do |laundry| %>
-        <%= render partial: 'shared/cardslist', locals: { laundry: laundry } %>
-        <h2> <strong> <%= laundry.name %> </strong> </h2>
-        <h3>Preço do kg R$: <%= laundry.price_kg %></h3>
-        <p>Nota dos clientes: <%= laundry.rating %></p>
+        <div class="laundry-card-list">
+          <div class="laundry-img">
+            <%= render partial: 'shared/cardslist', locals: { laundry: laundry } %>
+          </div>
+          <div class="laundry-details">
+            <h4> <strong> <%= laundry.name %> </strong> </h4>
+            <h5>Preço do kg R$: <%= laundry.price_kg %></h5>
+            <p class="laundry-rating">Nota dos clientes: <%= laundry.rating %></p>
+          </div>
+        </div>
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
