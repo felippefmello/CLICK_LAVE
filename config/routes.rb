@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'orders/new'
-  get 'laundries/new'
-  get 'laundries/edit'
-  get 'laundries/index'
-  get 'laundries/show'
+  namespace :laundry do
+    get 'orders/index'
+  end
   devise_for :users
   root to: 'pages#home'
   resources :laundries do
     resources :orders, only: [:new, :create]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :orders, only: [:index, :show]
+
+  namespace :laundry do
+    resources :orders, only: [:index], as: "laundry_orders"
+  end
 end
