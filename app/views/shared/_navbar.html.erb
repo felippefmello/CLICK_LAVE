@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo-retangular.jpg" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to t("#", default: "Cadastrar Lavanderia"), laundries_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t("#", default: "Buscar Lavanderia"), laundries_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("#", default: "Cadastrar Lavanderia"), new_laundry_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("#", default: "Buscar Lavanderia"), laundries_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -24,8 +24,14 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fas fa-tshirt"></i> <%= t(".settings", default: "Meus pedidos") %>
+              <% if current_user.laundries.first.nil? %>
+                <%= link_to orders_path do %>
+                  <i class="fas fa-tshirt"></i> <%= t(".settings", default: "Meus pedidos") %>
+                <% end %>
+              <% else %>
+                <%= link_to laundry_laundry_orders_path do %>
+                  <i class="fas fa-tshirt"></i> <%= t(".settings", default: "Meus pedidos") %>
+                <% end %>
               <% end %>
             </li>
             <li>
@@ -38,7 +44,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t("#", default: "Buscar Lavanderia"), laundries_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("#", default: "Buscar Lavanderia"), laundries_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Entrar"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
@@ -57,8 +63,14 @@
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
-              <i class="fas fa-tshirt"></i> <%= t(".settings", default: "Meus pedidos") %>
+            <% if current_user.laundries.first.nil? %>
+              <%= link_to orders_path do %>
+                <i class="fas fa-tshirt"></i> <%= t(".settings", default: "Meus pedidos") %>
+              <% end %>
+            <% else %>
+              <%= link_to laundry_laundry_orders_path do %>
+                <i class="fas fa-tshirt"></i> <%= t(".settings", default: "Meus pedidos") %>
+              <% end %>
             <% end %>
           </li>
           <li>
@@ -67,7 +79,7 @@
             <% end %>
           </li>
           <li>
-             <%= link_to t("#", default: "Cadastrar Lavanderia"), laundries_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
+             <%= link_to t("#", default: "Cadastrar Lavanderia"), new_laundry_path, class: "navbar-wagon-item navbar-wagon-link" %>
           </li>
         </ul>
       </div>
@@ -77,7 +89,7 @@
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to t("#", default: "Buscar Lavanderia"), laundries_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            <%= link_to t("#", default: "Buscar Lavanderia"), laundries_path, class: "navbar-wagon-item navbar-wagon-link" %>
           </li>
           <li>
             <%= link_to t(".sign_in", default: "Entrar"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
