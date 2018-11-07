@@ -1,7 +1,7 @@
 Laundry.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
-  email = ['erika', 'anderson', 'diego', 'tabata', 'carol' ]
-  email.each do |name|
+  emails = ['roberson', 'anderson', 'etienne', 'tabata', 'carolina' ]
+  emails.each do |name|
     f = User.new
     f.email = "#{name}@gmail.com"
     f.password = name
@@ -16,7 +16,7 @@ User.destroy_all if Rails.env.development?
   l.price_kg = rand (80..150)
   l.capacity = rand (8..12)
   l.rating = rand(4..10)
-  l.user_id = 1
+  l.user_id = User.all[0].id
   l.save
 
   a = Laundry.new
@@ -26,7 +26,7 @@ User.destroy_all if Rails.env.development?
   a.price_kg = rand (80..150)
   a.capacity = rand (8..12)
   a.rating = rand(4..10)
-  a.user_id = 1
+  a.user_id = User.all[3].id
   a.save
 
   b = Laundry.new
@@ -36,7 +36,7 @@ User.destroy_all if Rails.env.development?
   b.price_kg = rand (80..150)
   b.capacity = rand (8..12)
   b.rating = rand(4..10)
-  b.user_id = 1
+  b.user_id = User.all[3].id
   b.save
 
   c  = Laundry.new
@@ -46,7 +46,7 @@ User.destroy_all if Rails.env.development?
   c.price_kg = rand (80..150)
   c.capacity = rand (8..12)
   c.rating = rand(4..10)
-  c.user_id = 2
+  c.user_id = User.all[3].id
   c.save
 
   d = Laundry.new
@@ -56,5 +56,5 @@ User.destroy_all if Rails.env.development?
   d.price_kg = rand (80..150)
   d.capacity = rand (8..12)
   d.rating = rand(4..10)
-  d.user_id = 3
+  d.user_id = User.all[2].id
   d.save
