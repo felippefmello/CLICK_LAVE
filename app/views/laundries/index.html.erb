@@ -7,10 +7,9 @@
 
     <div class="col-xs-12 col-sm-6 col-md-4">
       <% @laundries.each do |laundry| %>
-        <div class="card" style="background-image: url(images/5asec.jpg)">
+        <%= render partial: 'shared/cards', locals: { laundry: laundry } %>
         <h2><%= laundry.name %></h2>
-        <h3><%= laundry.price_kg %></h3>
-        </div>
+        <h3>Preço do kg R$:<%= laundry.price_kg %></h3>
       <% end %>
     </div>
 
