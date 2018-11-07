@@ -1,35 +1,55 @@
 <div class="container">
+  <br>
+  <p><strong>Refinar busca:</strong></p>
+  <div class="form-container">
+    <form class="form-inline">
+       <div class="form-group">
+        <label for="exampleInputName2">endereço:</label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="digite aqui o seu endereço...">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">preço:</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="preço por kg">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">nota:</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="avaliações dos clientes">
+      </div>
+      <button type="submit" class="btn btn-default">Buscar</button>
+    </form>
+  </div>
 
-<h1>Lavanderias próximas a você:</h1>
-
+  <h3 class="text-center">Lavanderias próximas a você:</h3>
 
   <div class="main-container">
-
     <div class="col-xs-12 col-sm-6 col-md-4">
       <% @laundries.each do |laundry| %>
-        <%= render partial: 'shared/cards', locals: { laundry: laundry } %>
-        <h2><%= laundry.name %></h2>
-        <h3>Preço do kg R$:<%= laundry.price_kg %></h3>
+        <%= render partial: 'shared/cardslist', locals: { laundry: laundry } %>
+        <h2> <strong> <%= laundry.name %> </strong> </h2>
+        <h3>Preço do kg R$: <%= laundry.price_kg %></h3>
+        <p>Nota dos clientes: <%= laundry.rating %></p>
       <% end %>
     </div>
-
-    <div id="map"></div>
-        <!-- Gmaps js: building the map -->
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
   </div>
 </div>
 
-    <script>
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 52.5206, lng: 13.4098},
-          scrollwheel: false,
-          zoom: 8
-        });
-      }
-    </script>
+<script>
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 52.5206, lng: 13.4098},
+      scrollwheel: false,
+      zoom: 8
+    });
+  }
+</script>
 
-    <!-- Gmaps JavaScript -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
-        </script>
+<!-- Gmaps JavaScript -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+</script>
