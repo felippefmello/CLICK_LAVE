@@ -5,6 +5,15 @@
     <a class="btn btn-primary btn-lg">lavanderias mais próximas</a>
   </div>
 </div>
+<br>
+<div class="container">
+  <div class="row">
+    <% Laundry.first(3).each do |laundry| %>
+      <%= render partial: 'shared/cards', locals: { laundry: laundry } %>
+    <% end %>
+  </div>
+</div>
+
 
 
 
