@@ -2,10 +2,20 @@ class LaundriesController < ApplicationController
   before_action :set_laundry, only: [:show, :edit, :update, :destroy]
 
   def index
+    @laundries = Laundry.where.not(latitude: nil, longitude: nil)
+
     if params[:query].present?
       @laundries = Laundry.where("address ILIKE ?", "%#{params[:query]}%")
     else
       @laundries = Laundry.all
+    end
+
+    @markers = @laundries.map do |laundry|
+      {
+        lat: laundry.latitude,
+        lng: laundry.longitude,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
     end
   end
 
