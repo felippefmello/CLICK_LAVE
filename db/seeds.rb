@@ -1,10 +1,13 @@
 Laundry.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
-  emails = ['roberson', 'anderson', 'etienne', 'tabata', 'carolina' ]
-  emails.each do |name|
+  inputs = {roberto: "Fradique Coutinho 1350" , anderson: "Fidalga 255", tabata: "Purpurina 400",
+            davisjr: "Mourato Coelho 1322", camila: "Girassol 43" }
+  inputs.each do |key, value|
     f = User.new
-    f.email = "#{name}@gmail.com"
-    f.password = name
+    f.username = key
+    f.address = value
+    f.email = "#{key}@gmail.com"
+    f.password = key
     f.save
   end
 
@@ -26,7 +29,7 @@ User.destroy_all if Rails.env.development?
   a.price_kg = rand (80..150)
   a.capacity = rand (8..12)
   a.rating = rand(4..10)
-  a.user_id = User.all[3].id
+  a.user_id = User.all[2].id
   a.save
 
   b = Laundry.new
@@ -36,7 +39,7 @@ User.destroy_all if Rails.env.development?
   b.price_kg = rand (80..150)
   b.capacity = rand (8..12)
   b.rating = rand(4..10)
-  b.user_id = User.all[3].id
+  b.user_id = User.all[2].id
   b.save
 
   c  = Laundry.new
@@ -46,7 +49,7 @@ User.destroy_all if Rails.env.development?
   c.price_kg = rand (80..150)
   c.capacity = rand (8..12)
   c.rating = rand(4..10)
-  c.user_id = User.all[3].id
+  c.user_id = User.all[2].id
   c.save
 
   d = Laundry.new
@@ -56,5 +59,30 @@ User.destroy_all if Rails.env.development?
   d.price_kg = rand (80..150)
   d.capacity = rand (8..12)
   d.rating = rand(4..10)
-  d.user_id = User.all[2].id
+  d.user_id = User.all[3].id
   d.save
+
+  12.times do
+    o = Order.new
+    o.order_kg = rand(1..12)
+    o.status = true
+    o.user_id = User.all[1].id
+    o.laundry_id = Laundry.all[rand(0..4)].id
+    o.save
+  end
+
+  8.times do
+    u = Order.new
+    u.order_kg = rand(1..12)
+    u.status = true
+    u.user_id = User.all[4].id
+    u.laundry_id = Laundry.all[rand(0..4)].id
+    u.save
+  end
+
+  v = Order.new
+  v.order_kg = rand(1..12)
+  v.status = true
+  v.user_id = User.all[4].id
+  v.laundry_id = Laundry.all[rand(0..4)].id
+  v.save
