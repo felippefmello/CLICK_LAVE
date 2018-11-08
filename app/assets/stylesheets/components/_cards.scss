@@ -1,10 +1,41 @@
-.card {
+.container-laundry {
+  margin: 0 auto;
+  width: 970px;
+  color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .main_laundry_picture {
+    max-width: 100%
+  }
+}
+
+.card-laundry {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+}
+
+.card-laundry-infos h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.card-laundry-infos p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.card-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .card-user {
   position: absolute;
@@ -30,7 +61,7 @@
 }
 .card-description p {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.9;
   font-weight: lighter;
 }
 .card-link {
@@ -47,6 +78,40 @@
   opacity: 0.1;
 }
 
+.card {
+  height: 256px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
 .main-container {
   display: flex;
+  justify-content: space-around;
+}
+
+.laundry-card-list {
+  display: flex;
+  justify-content: space-around;
+  width: 620px;
+  height: 220px;
+  padding: 10px;
+  margin: 10px;
+  border-top: 1px solid blue;
+}
+
+.card-list {
+  height: 170px;
+  width: 250px;
+  background-size: cover;
+}
+
+.laundry-rating {
+  font-size: 0.7 em;
+}
+
+.laundry-img {
+  margin: 12px;
 }
