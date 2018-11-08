@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders.all.sort_by{|order| order.status ? 1 : 0}
+    @orders = current_user.orders.all
   end
 
   def show
