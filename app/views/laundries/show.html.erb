@@ -8,10 +8,11 @@
       <h2><%= @laundry.address %></h2>
       <p> Preco per kg: <%= @laundry.price_kg%></p>
       <p> Capacity: <%= @laundry.capacity%></p>
-
-      <%=link_to "Lavar", "#", class: "btn btn-success" %>
+        <%= render 'orders/form' %>
+   <!-- <%=link_to "Lavar", "#", class: "btn btn-success" %> -->
     </div>
   </div>
 
   <%= link_to "Voltar", laundries_path, class: "btn btn-xs btn-default" %>
 </div>
+

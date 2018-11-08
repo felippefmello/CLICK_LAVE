@@ -4,6 +4,12 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @order = Order.new(order_params)
+    @order.laundry = Laundry.find(params[:laundry_id])
+    @order.user = current_user
+    @order.status = false
+    @order.save
+    redirect_to laundry_laundry_orders_path
   end
 
   def index
@@ -14,5 +20,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def order_params
+    params.require(:order).permit(:order_kg, :laundry_id, :status)
+
+  end
 
 end
