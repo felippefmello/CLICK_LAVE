@@ -1,5 +1,6 @@
-Laundry.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+Order.delete_all if Rails.env.development?
+Laundry.delete_all if Rails.env.development?
+User.delete_all if Rails.env.development?
   inputs = {roberto: "Fradique Coutinho 1350" , anderson: "Fidalga 255", tabata: "Purpurina 400",
             davisjr: "Mourato Coelho 1322", camila: "Girassol 43" }
   inputs.each do |key, value|
