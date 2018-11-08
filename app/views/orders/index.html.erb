@@ -1,45 +1,35 @@
 
 <div class="container">
-  <h1></h1><br>
+ <h1></h1><br>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+          <h4>Meus Pedidos</h4>
+      </div>
+      <table class="table" style=" width:100%">
+          <tr>
+            <th>Lavanderia</th>
+            <th>Endereço</th>
+            <th>Peso</th>
+            <th>Valor</th>
+            <th>Status</th>
+          </tr>
 
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h4>Meus Pedidos</h4>
-    </div>
-
-
-    <table class="table" style="width:100%">
-      <tr>
-        <th>#</th>
-        <th>Data</th>
-        <th>Lavanderia</th>
-        <th>Peso</th>
-        <th>Preço</th>
-        <th>Prazo</th>
-        <th>Status</th>
-      </tr>
-
-      <tr>
-        <td>2</td>
-        <td>07/11/18</td>
-        <td>Bonasecco</td>
-        <td>5kg</td>
-        <td>R$ 50,00</td>
-        <td>1 dia - tarde</td>
-        <td>Pendente</td>
-      </tr>
-
-      <tr>
-        <td>1</td>
-        <td>21/10/18</td>
-        <td>Lava e Leva</td>
-        <td>7kg</td>
-        <td>R$ 70,00</td>
-        <td>Hoje - manhã</td>
-        <td>Entregue</td>
-      </tr>
-    </table>
-
-  </div>
+            <% @orders.each do |order| %>
+             <tr>
+               <td><%= order.laundry.name %></td>
+               <td><%= order.laundry.address %></td>
+               <td><%= order.order_kg %> kg</td>
+               <td>R$ <%= order.laundry.price_kg * order.order_kg%>,00</td>
+               <td>
+                    <% if order.status %>
+                    <div style="color:#127528"> <%= "Entregue" %></div>
+                    <% else %>
+                    <div style="color:#910B1F"><%= "Pendente" %></div>
+                    <% end %>
+               </td>
+             </tr>
+          <% end %>
+        </table>
+       </div>
 
 </div>
