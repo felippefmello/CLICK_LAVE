@@ -3,6 +3,7 @@
   text-align: center;
   min-height: calc(100vh - 170px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  min-width: 100% !important;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -19,4 +20,21 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+.carousel-control {
+z-index: 10;
+margin: 0;
+}
+
+.imagem-banner {
+  margin: 1000 !important;
+}
+
+.carousel {
+ margin: 0;
+}
+
+.content {
+  margin: 0;
 }
