@@ -2,7 +2,11 @@ class LaundriesController < ApplicationController
   before_action :set_laundry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @laundries = Laundry.all
+    if params[:query].present?
+      @laundries = Laundry.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @laundries = Laundry.all
+    end
   end
 
   def show
