@@ -1,7 +1,6 @@
 <div class="container">
   <br>
   <p><strong>Refinar busca:</strong></p>
-  <div class="form-container">
     <form class="form-inline">
        <div class="form-group">
         <label for="exampleInputName2">endereço:</label>
@@ -15,7 +14,6 @@
         <label for="exampleInputEmail2">nota:</label>
         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="avaliações dos clientes">
       </div>
-      <button type="submit" class="btn btn-default">Buscar</button>
     </form>
   </div>
 
@@ -32,7 +30,7 @@
             <h4> <strong> <%= laundry.name %> </strong> </h4>
             <h5>Preço do kg R$: <%= laundry.price_kg %></h5>
             <p class="laundry-rating">Nota dos clientes: <%= laundry.rating %></p>
-            <%= link_to "Ver detalhes", laundry_path(laundry), class: "btn btn-xs btn-default" %>
+            <%= link_to "Ver detalhes", laundry_path(laundry), class: "btn btn-md btn-default" %>
           </div>
 
 
