@@ -1,0 +1,6 @@
+<%= simple_form_for [@laundry, @order] do |f| %>
+  <%= f.input :order_kg %>
+
+  <%= f.submit "Lave-me", class: "btn btn-primary" %>
+<% end %>
+
