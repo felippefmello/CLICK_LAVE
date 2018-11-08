@@ -1,67 +1,47 @@
-<!-- <h1>Pedidos da lavanderia aqui! \o/</h1>
-<p>Find me in app/views/laundry/orders/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <h1></h1><br>
 
- -->
-<!--<% @orders.each do |order| %>
-  <p>Lavanderia: <%= order.laundry.name %></p>
-<% end %> -->
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h4>Minhas Entregas</h4>
+          </div>
 
- <div class="container">
-  <h1></h1><br>
+          <table class="table" style="width:100%">
+            <tr>
+              <th>Lavanderia</th>
+              <th>Usuário</th>
+              <th>Endereço</th>
+              <th>Peso</th>
+              <th>Valor</th>
+              <th>Status</th>
+            </tr>
 
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h4>Minhas Entregas</h4>
+            <% @orders.each do |order| %>
+            <tr>
+              <td><%= order.user.username %></td>
+              <td><%= order.laundry.name %></td>
+              <td><%= order.user.address %></td>
+              <td><%= order.order_kg %> kg</td>
+              <td>R$ <%= order.laundry.price_kg * order.order_kg %>,00</td>
+              <td>
+                <% if order.status %>
+                  <div style="color:#127528"> <%= "Entregue" %>
+                    <td><button class="btn btn-xs btn-success disabled"><i class="fa fa-tshirt"></i></button></td>
+                  </div>
+                <% else %>
+                  <div style="color:#910B1F"><%= "Pendente" %>
+                    <td><button class="btn btn-xs btn-danger"><i class="fa fa-tshirt"></i></button></td>
+                   </div>
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+
+        </div>
+
     </div>
-
-
-    <table class="table" style="width:100%">
-      <tr>
-        <th>Nome</th>
-        <th>Lavanderia</th>
-        <th>Endereço</th>
-        <th>Itens</th>
-        <th>Valor</th>
-        <th>Status</th>
-      </tr>
-
-      <tr>
-        <td>Jiraya</td>
-        <td>5asec</td>
-        <td>Alameda Itu, 420</td>
-        <td>20</td>
-        <td>R$: 300,00</td>
-        <td>Pendente</td>
-      </tr>
-
-      <tr>
-        <td>Tompson Nunes</td>
-        <td>laundromat</td>
-        <td>Rua Augusta, 153</td>
-        <td>5</td>
-        <td>R$: 75,00</td>
-        <td>Pendente</td>
-      </tr>
-
-      <tr>
-        <td>Hammurai Son</td>
-        <td>laundromat</td>
-        <td>Rua dos Pinheiros, 1442</td>
-        <td>10</td>
-        <td>R$: 200,00</td>
-        <td>Pendente</td>
-      </tr>
-
-      <tr>
-        <td>Murilo Cachette</td>
-        <td>5asec</td>
-        <td>Rua das Sempre Vivas, 1404</td>
-        <td>10</td>
-        <td>R$: 250,00</td>
-        <td>Pendente</td>
-      </tr>
-    </table>
-
   </div>
-
 </div>
