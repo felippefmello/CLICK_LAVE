@@ -8,8 +8,11 @@ class OrdersController < ApplicationController
     @order.laundry = Laundry.find(params[:laundry_id])
     @order.user = current_user
     @order.status = false
-    @order.save
-    redirect_to laundry_laundry_orders_path
+    if @order.save
+      redirect_to orders_path
+    else
+      render :new
+    end
   end
 
   def index
