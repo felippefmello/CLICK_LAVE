@@ -32,9 +32,16 @@
                   </div>
                 <% else %>
                   <div style="color:#910B1F"><%= "Pendente" %>
-                    <td><button class="btn btn-xs btn-danger"><i class="fa fa-tshirt"></i></button></td>
+                    <td>
+
+                      <%= link_to "Update", laundry_order_path(order), class: "btn btn-xs btn-danger"%>
+                      <!-- <button class="btn btn-xs btn-danger">
+                        <i class="fa fa-tshirt"></i>
+                      </button> -->
+                    </td>
                    </div>
                 <% end %>
+
               </td>
             </tr>
             <% end %>
