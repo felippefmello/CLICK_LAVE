@@ -7,6 +7,7 @@ class Laundry::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.status = true
     @order.save
+    redirect_to laundry_laundry_orders_path
   end
 
 end

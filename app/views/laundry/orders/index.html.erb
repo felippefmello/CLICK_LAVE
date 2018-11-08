@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -34,11 +33,7 @@
                 <% else %>
                   <div style="color:#910B1F"><%= "Pendente" %>
                     <td>
-
-                      <%= link_to "Update", laundry_order_path(order), class: "btn btn-xs btn-danger"%>
-                      <!-- <button class="btn btn-xs btn-danger">
-                        <i class="fa fa-tshirt"></i>
-                      </button> -->
+                      <%= link_to "<i class="fa fa-tshirt"></i>", laundry_order_path(order), method: :patch, class: "btn btn-xs btn-danger"%>
                     </td>
                    </div>
                 <% end %>
@@ -53,5 +48,4 @@
     </div>
   </div>
 </div>
-=======
->>>>>>> ee6469bee88d6f296b0791857301015b83da1030
+
