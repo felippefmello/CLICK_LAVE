@@ -99,11 +99,11 @@
   height: 220px;
   padding: 10px;
   margin: 10px;
-  border-top: 1px solid blue;
+  border-top: 1px solid #234e7d;
 }
 
 .card-list {
-  height: 170px;
+  height: 173px;
   width: 250px;
   background-size: cover;
 }
@@ -114,4 +114,6 @@
 
 .laundry-img {
   margin: 12px;
+  box-shadow: 6px 6px 8px grey;
+  border: 1px solid black;
 }
