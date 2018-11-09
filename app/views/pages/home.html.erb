@@ -1,8 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
-  <div class="banner-content">
+  <div class="banner-content text-center">
     <h1>Click Lave</h1>
-    <p>Suas roupas limpinhas pelo melhor preço</p>
-    <a class="btn btn-primary btn-lg">lavanderias mais próximas</a>
+    <p>Suas roupas limpas pelo melhor preço</p>
+
+      <div class="text-center" style="opacity: 0.8">
+          <%= form_tag laundries_path, method: :get do %>
+             <%= text_field_tag :query,
+              params[:query],
+              class: "form-control text-center",
+              placeholder: "digite aqui o seu endereço..."
+            %>
+          <br>
+          <%= submit_tag 'Lavanderias próximas', class: "btn btn-primary btn-md"%>
+          <% end %>
+      </div>
+
   </div>
 </div>
 <br>
