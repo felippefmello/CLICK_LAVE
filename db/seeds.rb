@@ -1,8 +1,8 @@
 Order.delete_all if Rails.env.development?
 Laundry.delete_all if Rails.env.development?
 User.delete_all if Rails.env.development?
-  inputs = {roberto: "Fradique Coutinho 1350" , anderson: "Fidalga 255", tabata: "Purpurina 400",
-            davisjr: "Mourato Coelho 1322", camila: "Girassol 43" }
+  inputs = {roberto: "R. Fradique Coutinho, 1350" , anderson: "R. Fidalga, 255", tabata: "R. Purpurina, 400",
+            davisjr: "R. Mourato Coelho, 1322", camila: "R. Girassol, 43" }
   inputs.each do |key, value|
     f = User.new
     f.username = key
