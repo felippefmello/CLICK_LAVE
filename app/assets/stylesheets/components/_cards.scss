@@ -89,7 +89,8 @@
 
 .main-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .laundry-card-list {
@@ -116,4 +117,8 @@
   margin: 12px;
   box-shadow: 6px 6px 8px grey;
   border: 1px solid black;
+}
+
+.form-container{
+  width: 900px;
 }
