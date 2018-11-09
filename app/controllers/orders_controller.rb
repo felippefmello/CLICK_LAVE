@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to orders_path
     else
-      render :new
+      redirect_to user_session_path
     end
   end
 

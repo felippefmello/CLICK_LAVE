@@ -9,5 +9,5 @@ class Laundry < ApplicationRecord
   validates :address, presence: true
   validates :cnpj, presence: true
   validates :price_kg, presence: true
-  validates :capacity, presence: true
+  # validates :capacity, presence: true
 end
