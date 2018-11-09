@@ -11,12 +11,12 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to orders_path
     else
-      render :new
+      redirect_to user_session_path
     end
   end
 
   def index
-    @orders = current_user.orders.all
+    @orders = current_user.orders.all.sort_by{|order| order.status ? 1 : 0}
   end
 
   def show
