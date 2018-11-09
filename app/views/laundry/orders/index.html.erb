@@ -10,8 +10,8 @@
 
           <table class="table" style="width:100%">
             <tr>
-              <th>Lavanderia</th>
               <th>Usuário</th>
+              <th>Lavanderia</th>
               <th>Endereço</th>
               <th>Peso</th>
               <th>Valor</th>
@@ -20,20 +20,20 @@
 
             <% @orders.each do |order| %>
             <tr>
-              <td><%= order.user.username %></td>
+              <td><%= order.user.username.capitalize %></td>
               <td><%= order.laundry.name %></td>
               <td><%= order.user.address %></td>
               <td><%= order.order_kg %> kg</td>
               <td>R$ <%= order.laundry.price_kg * order.order_kg %>,00</td>
               <td>
                 <% if order.status %>
-                  <div style="color:#127528"> <%= "Entregue" %>
+                  <div style="color:#72c3ab"> <%= "Entregue" %>
                     <td><button class="btn btn-xs btn-success disabled"><i class="fa fa-tshirt"></i></button></td>
                   </div>
                 <% else %>
-                  <div style="color:#910B1F"><%= "Pendente" %>
+                  <div style="color:#A63446"><%= "Pendente" %>
                     <td>
-                      <%= link_to "<i class="fa fa-tshirt"></i>", laundry_order_path(order), method: :patch, class: "btn btn-xs btn-danger"%>
+                      <%= link_to "<i class='fa fa-tshirt'></i>".html_safe, laundry_order_path(order), method: :patch, class: "btn btn-xs btn-danger"%>
                     </td>
                    </div>
                 <% end %>
