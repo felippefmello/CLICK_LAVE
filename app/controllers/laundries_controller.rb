@@ -14,7 +14,7 @@ class LaundriesController < ApplicationController
       {
         lat: laundry.latitude,
         lng: laundry.longitude,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        infoWindow: { content: render_to_string(partial: "/laundries/map_box", locals: { laundry: laundry }) }
       }
     end
   end

@@ -15,7 +15,7 @@
   </div>
 
   <h3 class="text-center">Lavanderias próximas a você:</h3>
-<br>
+
   <div class="main-container">
     <div class="row">
 
@@ -29,7 +29,7 @@
             </div>
             <div class="card-list">
               <h4> <strong> <%= laundry.name %> </strong> </h4>
-              <h5>Preço do kg: R$<%= laundry.price_kg %>,00</h5>
+              <h5>Preço por kg: R$<%= laundry.price_kg %>,00</h5>
               <p class="laundry-rating">Nota dos clientes: <%= laundry.rating %></p>
               <%= link_to "Ver detalhes", laundry_path(laundry), class: "btn btn-md btn-default" %>
             </div>
