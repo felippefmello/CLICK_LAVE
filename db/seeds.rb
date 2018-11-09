@@ -16,7 +16,7 @@ User.delete_all if Rails.env.development?
   l = Laundry.new
   l.name = "5asec Pinheiros"
   l.address = "R. Artur de Azevedo, 1339"
-  l.cnpj = 'assets/5asec.jpg'
+  l.image = '5asec.jpg'
   l.price_kg = rand (8..20)
   l.capacity = rand (8..12)
   l.rating = rand(4..10)
@@ -26,7 +26,7 @@ User.delete_all if Rails.env.development?
   a = Laundry.new
   a.name = "BonaSecco Perdizes"
   a.address = "Av. Marquês de São Vicente, 2219"
-  a.cnpj = "assets/bonasecco.jpg"
+  a.image = "bonasecco.jpg"
   a.price_kg = rand (8..20)
   a.capacity = rand (8..12)
   a.rating = rand(4..10)
@@ -36,7 +36,7 @@ User.delete_all if Rails.env.development?
   b = Laundry.new
   b.name = "Laundromat da Villa"
   b.address = "Rua Harmonia, 876"
-  b.cnpj = "assets/laundromat.jpg"
+  b.image = "laundromat.jpg"
   b.price_kg = rand (8..20)
   b.capacity = rand (8..12)
   b.rating = rand(4..10)
@@ -46,7 +46,7 @@ User.delete_all if Rails.env.development?
   c  = Laundry.new
   c.name = "Lava e Leva Alto de Pinheiros"
   c.address = "Rua Pio XI, 1897"
-  c.cnpj = "assets/lavaeleva.jpg"
+  c.image = "lavaeleva.jpg"
   c.price_kg = rand (8..20)
   c.capacity = rand (8..12)
   c.rating = rand(4..10)
@@ -56,7 +56,7 @@ User.delete_all if Rails.env.development?
   d = Laundry.new
   d.name = "Dry Clean USA - Pinheiros"
   d.address = "R. Artur de Azevedo, 553"
-  d.cnpj = "assets/drycleanusa.png"
+  d.image = "drycleanusa.png"
   d.price_kg = rand (8..20)
   d.capacity = rand (8..12)
   d.rating = rand(4..10)
