@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # namespace :laundry do
-  #   get 'orders/index'
-  # end
   devise_for :users
   root to: 'pages#home'
   resources :laundries do
@@ -11,5 +8,7 @@ Rails.application.routes.draw do
 
   namespace :laundry do
     resources :orders, only: [:index], as: "laundry_orders"
+    resources :orders, only: [:update]
   end
+
 end
