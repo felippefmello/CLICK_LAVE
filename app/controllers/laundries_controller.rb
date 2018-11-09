@@ -53,7 +53,7 @@ class LaundriesController < ApplicationController
   private
 
   def laundry_params
-    params.require(:laundry).permit(:name, :address, :cnpj, :price_kg)
+    params.require(:laundry).permit(:name, :address, :image, :price_kg)
   end
 
   def set_laundry
